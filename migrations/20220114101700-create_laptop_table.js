@@ -34,16 +34,6 @@ module.exports = {
             //  define Description Column and Type
             description: {
                 type: Sequelize.TEXT
-            },
-            //  define Created At Column and Type
-            createAt: {
-                type: Sequelize.DATE,
-                allowNull: false
-            },
-            //  define Updated At Column and Type
-            updateAt: {
-                type: Sequelize.DATE,
-                allowNull: false
             }
         })
     },
