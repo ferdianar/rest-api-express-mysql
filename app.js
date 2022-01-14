@@ -10,8 +10,13 @@ var cookieParser = require('cookie-parser')
 var logger = require('morgan')
 
 // Routing
-var indexRouter = require('./routes/index')
-var usersRouter = require('./routes/users')
+const indexRouter = require("./routes/index")
+
+// User Routes
+const usersRouter = require("./routes/users")
+
+// Laptop Routes
+const laptopRouter = require("./routes/laptop")
 
 // create express server
 var app = express()
@@ -23,7 +28,9 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.use('/', indexRouter)
-app.use('/users', usersRouter)
+// page redirect
+app.use("/", indexRouter)
+app.use("/users", usersRouter)
+app.use("/laptop", laptopRouter)
 
 module.exports = app
